@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability Information - EcoMart</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <a class="navbar-brand" href="index.html">
+            <img src="Images/Logo.jpg" alt="EcoMart Logo" width="40" height="40"> EcoMart
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="sustainability.html">Sustainability</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sustainability Information Content -->
+    <main class="container mt-5 sustainability-section">
+        <h2 class="text-center mb-4">Sustainability Practices</h2>
+        <div class="row">
+            <!-- Card 1: Recycling Tips -->
+            <div class="col-md-4 mb-4">
+                <div class="card sustainability-card">
+                    <img src="Images/recycling.jpg" class="card-img-top" alt="Recycling Tips">
+                    <div class="card-body">
+                        <h5 class="card-title">Recycling Tips</h5>
+                        <p class="card-text">Learn how to recycle effectively and reduce waste in your daily life.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#recyclingModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Benefits of Eco-Friendly Products -->
+            <div class="col-md-4 mb-4">
+                <div class="card sustainability-card">
+                    <img src="Images/eco_friendly_products.jpg" class="card-img-top" alt="Eco-Friendly Products">
+                    <div class="card-body">
+                        <h5 class="card-title">Benefits of Eco-Friendly Products</h5>
+                        <p class="card-text">Discover the advantages of using eco-friendly products.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#ecoFriendlyModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Reducing Plastic Waste -->
+            <div class="col-md-4 mb-4">
+                <div class="card sustainability-card">
+                    <img src="Images/plastic_waste.jpg" class="card-img-top" alt="Reducing Plastic Waste">
+                    <div class="card-body">
+                        <h5 class="card-title">Reducing Plastic Waste</h5>
+                        <p class="card-text">Explore ways to cut down on plastic waste.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#plasticWasteModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Energy Conservation -->
+            <div class="col-md-4 mb-4">
+                <div class="card sustainability-card">
+                    <img src="Images/energy_conservation.jpg" class="card-img-top" alt="Energy Conservation">
+                    <div class="card-body">
+                        <h5 class="card-title">Energy Conservation</h5>
+                        <p class="card-text">Tips for reducing energy usage and saving resources.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#energyConservationModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Water Conservation -->
+            <div class="col-md-4 mb-4">
+                <div class="card sustainability-card">
+                    <img src="Images/water_conservation.jpg" class="card-img-top" alt="Water Conservation">
+                    <div class="card-body">
+                        <h5 class="card-title">Water Conservation</h5>
+                        <p class="card-text">Discover ways to reduce water waste effectively.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#waterConservationModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: Eco-Friendly Transportation -->
+            <div class="col-md-4 mb-4">
+                <div class="card sustainability-card">
+                    <img src="Images/eco_transportation.jpg" class="card-img-top" alt="Eco-Friendly Transportation">
+                    <div class="card-body">
+                        <h5 class="card-title">Eco-Friendly Transportation</h5>
+                        <p class="card-text">Learn about sustainable ways to travel and reduce carbon footprint.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#ecoTransportationModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modals for Detailed Information -->
+    <!-- Recycling Modal -->
+    <div class="modal fade" id="recyclingModal" tabindex="-1" aria-labelledby="recyclingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="recyclingModalLabel">Recycling Tips</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Recycling is a simple but effective way to reduce waste and protect the environment.</p>
+                    <ul>
+                        <li><strong>Separate Recyclables</strong>: Separate paper, plastic, and glass materials.</li>
+                        <li><strong>Clean Containers</strong>: Rinse out food and beverage containers to avoid contamination.</li>
+                        <li><strong>Know Local Recycling Rules</strong>: Different areas have specific recycling rules.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Eco-Friendly Products Modal -->
+    <div class="modal fade" id="ecoFriendlyModal" tabindex="-1" aria-labelledby="ecoFriendlyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ecoFriendlyModalLabel">Benefits of Eco-Friendly Products</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Eco-friendly products reduce waste, conserve resources, and help protect the environment.</p>
+                    <ul>
+                        <li><strong>Less Pollution</strong>: Eco-friendly products produce less waste and pollution.</li>
+                        <li><strong>Sustainable Materials</strong>: They are made from renewable or recyclable materials.</li>
+                        <li><strong>Better for Health</strong>: Many eco-friendly products are free from harmful chemicals.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plastic Waste Modal -->
+    <div class="modal fade" id="plasticWasteModal" tabindex="-1" aria-labelledby="plasticWasteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="plasticWasteModalLabel">Reducing Plastic Waste</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Reducing plastic waste is essential to protecting wildlife and reducing pollution.</p>
+                    <ul>
+                        <li><strong>Use Reusable Bags</strong>: Bring reusable bags when shopping.</li>
+                        <li><strong>Avoid Single-Use Plastics</strong>: Opt for reusable or compostable items.</li>
+                        <li><strong>Recycle Properly</strong>: Ensure that plastic items are clean and recyclable.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Energy Conservation Modal -->
+    <div class="modal fade" id="energyConservationModal" tabindex="-1" aria-labelledby="energyConservationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="energyConservationModalLabel">Energy Conservation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Conserving energy is vital to reducing carbon emissions and saving resources.</p>
+                    <ul>
+                        <li><strong>Use LED Bulbs</strong>: LED lights consume less power and last longer.</li>
+                        <li><strong>Turn Off Unused Appliances</strong>: Reduce "phantom" energy consumption.</li>
+                        <li><strong>Optimize Heating & Cooling</strong>: Set thermostats wisely to conserve energy.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Water Conservation Modal -->
+    <div class="modal fade" id="waterConservationModal" tabindex="-1" aria-labelledby="waterConservationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="waterConservationModalLabel">Water Conservation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Reducing water usage is key to preserving a vital natural resource.</p>
+                    <ul>
+                        <li><strong>Fix Leaks</strong>: Dripping faucets waste gallons of water daily.</li>
+                        <li><strong>Use Low-Flow Fixtures</strong>: Reduces water usage in bathrooms and kitchens.</li>
+                        <li><strong>Water Plants Wisely</strong>: Water plants in the early morning to reduce evaporation.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Eco-Friendly Transportation Modal -->
+    <div class="modal fade" id="ecoTransportationModal" tabindex="-1" aria-labelledby="ecoTransportationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ecoTransportationModalLabel">Eco-Friendly Transportation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Adopting eco-friendly transportation options can reduce your carbon footprint.</p>
+                    <ul>
+                        <li><strong>Use Public Transport</strong>: Reduces the number of vehicles on the road.</li>
+                        <li><strong>Carpool or Bike</strong>: Opt for carpooling or biking when possible.</li>
+                        <li><strong>Drive Fuel-Efficient Cars</strong>: Choose fuel-efficient or electric vehicles.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap and JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

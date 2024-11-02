@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - EcoMart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <style>
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <a class="navbar-brand" href="index.html">
+            <img src="Images/Logo.jpg" alt="EcoMart Logo" width="40" height="40" class="logo-image"> EcoMart
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="sustainability.html">Sustainability</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- User Profile Section -->
+    <main class="container mt-5">
+        <h2 class="text-center mb-4">User Profile</h2>
+        <div class="text-center">
+            <!-- Profile Photo Section -->
+            <img src="Images/Profile_Photo.png" id="profilePhoto" class="profile-photo" alt="Profile Photo">
+            <input type="file" id="photoUpload" accept="image/*" class="form-control-file mb-3">
+            
+        </div>
+
+        <!-- Profile Form -->
+        <form id="profileForm" class="mt-4">
+            <div class="form-group">
+                <label for="profileName">Name</label>
+                <input type="text" class="form-control" id="profileName" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="profileEmail">Email</label>
+                <input type="email" class="form-control" id="profileEmail" placeholder="Enter your email" disabled>
+            </div>
+            <div class="form-group">
+                <label for="profilePhone">Phone Number</label>
+                <input type="text" class="form-control" id="profilePhone" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+                <label for="profileAddress">Address</label>
+                <textarea class="form-control" id="profileAddress" rows="2" placeholder="Enter your address"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="profilePassword">Password</label>
+                <input type="password" class="form-control" id="profilePassword" placeholder="Enter a new password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Update Profile</button>
+        </form>
+    </main>
+
+    <!-- Script to Load and Save User Profile -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const storedUser = JSON.parse(localStorage.getItem("user"));
+
+            if (storedUser) {
+                document.getElementById("profileName").value = storedUser.name;
+                document.getElementById("profileEmail").value = storedUser.email;
+                document.getElementById("profilePhone").value = storedUser.phone || "";
+                document.getElementById("profileAddress").value = storedUser.address || "";
+                if (storedUser.photo) {
+                    document.getElementById("profilePhoto").src = storedUser.photo;
+                }
+            }
+        });
+
+        document.getElementById("profileForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const updatedName = document.getElementById("profileName").value.trim();
+            const updatedPhone = document.getElementById("profilePhone").value.trim();
+            const updatedAddress = document.getElementById("profileAddress").value.trim();
+            const updatedPassword = document.getElementById("profilePassword").value.trim();
+            let user = JSON.parse(localStorage.getItem("user"));
+
+            if (user) {
+                user.name = updatedName;
+                user.phone = updatedPhone;
+                user.address = updatedAddress;
+                if (updatedPassword) user.password = updatedPassword; // Update password only if provided
+
+                localStorage.setItem("user", JSON.stringify(user));
+                alert("Profile updated successfully!");
+                document.getElementById("profilePassword").value = ""; // Clear password field after update
+            } else {
+                alert("User not found. Please log in.");
+                window.location.href = "login.html";
+            }
+        });
+
+        document.getElementById("photoUpload").addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file && file.type.startsWith("image/")) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById("profilePhoto").src = e.target.result;
+                    let user = JSON.parse(localStorage.getItem("user"));
+                    if (user) {
+                        user.photo = e.target.result;
+                        localStorage.setItem("user", JSON.stringify(user));
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

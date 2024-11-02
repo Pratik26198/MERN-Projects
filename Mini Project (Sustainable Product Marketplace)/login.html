@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - EcoMart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <style>
+        /* Custom styling for the navbar and form */
+        .custom-navbar {
+            background-color: #2e7d32;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .custom-navbar .navbar-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .custom-navbar .navbar-nav .nav-link {
+            color: #ffffff;
+            font-size: 1.1em;
+            padding: 10px 15px;
+        }
+        .custom-navbar .navbar-nav .nav-link:hover {
+            background-color: #218838;
+            color: #ffffff;
+            border-radius: 5px;
+        }
+        .auth-form-container {
+            max-width: 450px;
+            margin: auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .btn-primary {
+            background-color: #28a745;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        .logo-image {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <a class="navbar-brand" href="index.html">
+            <img src="Images/Logo.jpg" alt="EcoMart Logo" width="40" height="40" class="logo-image"> EcoMart
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="sustainability.html">Sustainability</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    
+
+    <!-- Login Form -->
+    <main class="container mt-5 auth-form-container">
+        <h2 class="text-center mb-4">Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email">
+                <small class="error" id="loginEmailError"></small>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password">
+                <small class="error" id="loginPasswordError"></small>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+    </main>
+
+    <!-- JavaScript for Form Validation -->
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Reset error messages
+            document.getElementById("loginEmailError").textContent = "";
+            document.getElementById("loginPasswordError").textContent = "";
+
+            // Retrieve form data
+            const email = document.getElementById("loginEmail").value.trim();
+            const password = document.getElementById("loginPassword").value.trim();
+            const storedUser = JSON.parse(localStorage.getItem("user"));
+
+            let hasError = false;
+
+            // Email validation
+            if (!email) {
+                document.getElementById("loginEmailError").textContent = "Email is required.";
+                hasError = true;
+            }
+
+            // Password validation
+            if (!password) {
+                document.getElementById("loginPasswordError").textContent = "Password is required.";
+                hasError = true;
+            }
+
+            // Check credentials if no validation errors
+            if (!hasError) {
+                if (!storedUser || storedUser.email !== email || storedUser.password !== password) {
+                    document.getElementById("loginEmailError").textContent = "Invalid email or password.";
+                } else {
+                    alert("Login successful!");
+                    window.location.href = "index.html"; // Redirect to homepage
+                }
+            }
+        });
+    </script>
+
+    <!-- Bootstrap and JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
