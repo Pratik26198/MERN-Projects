@@ -1,0 +1,205 @@
+/* Body Background with Subtle Mixed Color Gradient */
+body {
+    background: linear-gradient(135deg, #e0f7fa, #e8f5e9, #f1f8e9, #ffecb3);
+    color: #333;
+    font-family: Arial, sans-serif;
+    background-attachment: fixed;
+}
+
+/* Navbar Styling with Green Theme */
+.custom-navbar {
+    background-color: #2e7d32;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 0.8rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.custom-navbar .navbar-brand {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.custom-navbar .navbar-brand img {
+    margin-right: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.custom-navbar .navbar-brand:hover img {
+    transform: scale(1.05);
+}
+
+.custom-navbar .navbar-nav .nav-link {
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+.custom-navbar .navbar-nav .nav-link:hover {
+    background-color: #1b5e20;
+    color: #ffffff;
+}
+
+.custom-navbar .navbar-nav .active {
+    color: #cddc39;
+    font-weight: bold;
+}
+
+/* Toggle button background */
+.navbar-toggler {
+    background-color: #d7e4d7;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Toggle icon color */
+.navbar-toggler-icon {
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+/* Active/expanded state */
+.navbar-toggler[aria-expanded="true"] {
+    background-color: #388e3c;
+}
+
+
+/* Logout Button Styling */
+.custom-navbar .navbar-nav .btn-outline-danger {
+    color: #ffffff;
+    border-color: #ffffff;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-navbar .navbar-nav .btn-outline-danger:hover {
+    background-color: #d32f2f;
+    color: #ffffff;
+    border-color: #d32f2f;
+}
+
+/* Main Container Styling */
+.container, .featured-products {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animation for Smooth Fade-in Effect */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Carousel Styling */
+.carousel-item img {
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Featured Products Section */
+.featured-products .card {
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-products .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.featured-products .card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.featured-products .card-text {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.btn-primary {
+    background-color: #2e7d32;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1b5e20;
+}
+
+.btn-success {
+    background-color: #4caf50;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #388e3c;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #2e7d32;
+    color: #080808;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 1em;
+}
+
+/* Toast Notification Styling */
+.toast {
+    background-color: #cddc39;
+    color: #000;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+/* Responsive Design for tablets and larger devices */
+@media (min-width: 768px) {
+    .auth-form, .contact-form {
+        padding: 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .auth-form, .contact-form {
+        max-width: 500px;
+    }
+    .navbar-brand {
+        font-size: 1.7em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar-brand {
+        font-size: 1.8em;
+    }
+}

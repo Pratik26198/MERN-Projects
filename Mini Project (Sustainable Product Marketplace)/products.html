@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - EcoMart</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <a class="navbar-brand" href="index.html">
+            <img src="Images/Logo.jpg" alt="EcoMart Logo" width="40" height="40"> EcoMart
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="products.html" aria-label="View Products">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="sustainability.html" aria-label="Learn about Sustainability">Sustainability</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html" aria-label="View Cart">Cart</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html" aria-label="Contact Us">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html" aria-label="Login">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="signup.html" aria-label="Sign Up">Sign Up</a></li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-danger" onclick="logOut()">Log Out</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Our Sustainable Products</h2>
+
+        <!-- Search, Sort, and Filter Options -->
+        <div class="d-flex justify-content-between mb-4">
+            <input type="text" class="form-control mr-2" id="searchInput" placeholder="Search products..." oninput="searchProducts()">
+            <select class="form-control mr-2" id="sortDropdown" onchange="sortProducts()">
+                <option value="">Sort by Price</option>
+                <option value="asc">Low to High</option>
+                <option value="desc">High to Low</option>
+            </select>
+            <select class="form-control" id="categoryDropdown" onchange="filterByCategory()">
+                <option value="">Filter by Category</option>
+                <option value="Apparel">Apparel</option>
+                <option value="Personal Care">Personal Care</option>
+                <option value="Household">Household</option>
+                <option value="Stationery">Stationery</option>
+            </select>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="row" id="productGrid">
+            <!-- JavaScript will dynamically populate products here -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4" style="background-color: #2e7d32; color: #fff;">
+        <p>&copy; 2024 EcoMart. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS for Products Page -->
+    <script src="JS/script(products).js"></script>
+
+    <!-- Inline Script for Logout -->
+    <script>
+        function logOut() {
+        if (confirm("Are you sure you want to log out?")) {
+            alert("Logging out...");
+
+            sessionStorage.clear();
+            localStorage.removeItem("userToken");
+
+            window.location.href = "login.html";
+    }
+}
+    </script>
+</body>
+</html>

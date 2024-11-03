@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMart - Sustainable Product Marketplace</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="CSS/styles.css">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Eco-friendly and sustainable products marketplace to shop responsibly. Browse apparel, reusable products, and more.">
+    <meta name="keywords" content="sustainable products, eco-friendly, reusable, organic, green products, marketplace">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <a class="navbar-brand" href="index.html">
+            <img src="Images/Logo.jpg" alt="EcoMart Logo" width="40" height="40"> EcoMart
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="products.html" aria-label="Go to Products page">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="sustainability.html" aria-label="Go to Sustainability page">Sustainability</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html" aria-label="Go to Cart page">Cart</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html" aria-label="Contact Us">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html" aria-label="Login">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="signup.html" aria-label="Sign Up">Sign Up</a></li>
+                <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-danger" onclick="logOut()">Log Out</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mt-5">
+
+        <!-- Carousel for Popular Categories -->
+        <div id="categoryCarousel" class="carousel slide mb-5" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#categoryCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#categoryCarousel" data-slide-to="1"></li>
+                <li data-target="#categoryCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="Images/EcoFriendly Appareal (Car).jpg" class="d-block w-100" alt="Eco-friendly Apparel" loading="lazy">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Eco-friendly Apparel</h5>
+                        <p>Look good and feel good with sustainable clothing options.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="Images/Sustainable Home Godds (Car).webp" class="d-block w-100" alt="Sustainable Home Goods" loading="lazy">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Sustainable Home Goods</h5>
+                        <p>Decorate your home with eco-friendly materials.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="Images/Reusable Products (Car).jpeg" class="d-block w-100" alt="Reusable Products" loading="lazy">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Reusable Products</h5>
+                        <p>Choose products designed to reduce waste.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#categoryCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#categoryCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <!-- Featured Products Section -->
+        <section class="featured-products mb-5">
+            <h2 class="text-center mb-4">Featured Products</h2>
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="Images/product1.jpg" class="card-img-top" alt="Organic Cotton T-Shirt" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Cotton T-Shirt</h5>
+                            <p class="card-text">Made from 100% organic cotton, this T-shirt is soft, sustainable, and stylish.</p>
+                            <a href="products.html" class="btn btn-primary">View Product</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="Images/product2.png" class="card-img-top" alt="Bamboo Toothbrush Set" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">Bamboo Toothbrush Set</h5>
+                            <p class="card-text">Eco-friendly bamboo toothbrushes for a sustainable oral care routine.</p>
+                            <a href="products.html" class="btn btn-primary">View Product</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="Images/product3.png" class="card-img-top" alt="Reusable Grocery Bags" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">Reusable Grocery Bags</h5>
+                            <p class="card-text">Reduce plastic waste with these durable, reusable grocery bags.</p>
+                            <a href="products.html" class="btn btn-primary">View Product</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-light mt-5">
+        <p>&copy; 2024 EcoMart. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Inline Script for Enhancements -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentPath = window.location.pathname;
+            document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+                if (link.getAttribute("href") === currentPath) {
+                    link.classList.add("active");
+                }
+            });
+        });
+
+        function logOut() {
+        if (confirm("Are you sure you want to log out?")) {
+            alert("Logging out...");
+
+            sessionStorage.clear();
+            localStorage.removeItem("userToken");
+
+            window.location.href = "login.html";
+    }
+}
+    </script>
+</body>
+</html>
